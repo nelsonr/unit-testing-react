@@ -18,9 +18,11 @@ function Example02 () {
     const [editIndex, setEditIndex] = useState(null);
 
     const addItem = () => {
-        const itemNumber = state.length < 9
-            ? "0" + (state.length + 1)
-            : state.length + 1;
+        const itemNumber = (
+            state.length < 9
+                ? "0" + (state.length + 1)
+                : state.length + 1
+        );
 
         return dispatch({ type: "add", data: "Item " + itemNumber });
     };
@@ -43,7 +45,13 @@ function Example02 () {
         if (editIndex === index) {
             return <li key={index}>
                 <form onSubmit={onSubmit}>
-                    <input type='text' name='input' defaultValue={item} autoFocus />
+                    <input 
+                        type='text' 
+                        name='input' 
+                        defaultValue={item} 
+                        onBlur={() => setEditIndex(null)} 
+                        autoFocus 
+                    />
                 </form>
             </li>; 
         }
