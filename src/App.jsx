@@ -40,11 +40,6 @@ function App () {
                             Example 02
                         </a>
                     </li>
-                    <li>
-                        <a href="#" onClick={(ev) => navigateTo(ev, 2)} className={exampleIndex == 2 ? "active" : ""}>
-                            Example 03
-                        </a>
-                    </li>
                 </ul>
             </nav>
         </>
