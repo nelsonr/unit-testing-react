@@ -1,17 +1,5 @@
 import { useReducer, useState } from 'react';
-
-function ListReducer (state, action) {
-    switch (action.type) {
-        case "add":
-            return [...state, action.data];
-        case "update":
-            return state.with(action.index, action.data);
-        case "remove":
-            return state.toSpliced(state.length - 1, 1);
-        default:
-            return state;
-    }
-}
+import { ListReducer } from '../utils';
 
 function Example02 () {
     const [state, dispatch] = useReducer(ListReducer, ["Item 01", "Item 02", "Item 03"]);
