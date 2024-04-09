@@ -1,4 +1,4 @@
-import { ListReducer } from "../utils";
+import { ListReducer } from "../lib/utils";
 
 test("Add a new item to a list", () => {
     const list = [];
